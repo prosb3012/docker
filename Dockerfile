@@ -27,7 +27,7 @@ RUN tar -xzvf latest.tar.gz
 RUN mv /var/www/wordpress /var/www/html
 RUN chown -R nginx:nginx /var/www/html
 COPY start.sh /start.sh
-RUN chmod +x start.sh
+RUN chmod +x /start.sh
 EXPOSE 9000
 EXPOSE 80
 
