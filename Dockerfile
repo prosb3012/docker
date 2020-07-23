@@ -15,7 +15,7 @@ RUN sed -e '/allowed_clients/d' \
         -e '/error_log/d' \
         -i /etc/opt/remi/php72/php-fpm.d/www.conf
 RUN yum update -y    
-RUN yum install nginx iptables mariadb htop nano net-tools wget tar -y				
+RUN yum install nginx iptables mariadb htop nano net-tools wget tar links -y				
 COPY test3.com.conf /etc/nginx/conf.d/test3.com.conf
 COPY nginx.conf /etc/nginx/
 ENV supervisor_conf /etc/supervisor/supervisord.conf
