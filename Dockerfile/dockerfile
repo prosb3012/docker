@@ -30,4 +30,4 @@ RUN chown -R nginx:nginx /var/www/html
 EXPOSE 9000
 EXPOSE 80
 
-CMD ["/bin/bash","D"]
+CMD ["/bin/sh","D"]
