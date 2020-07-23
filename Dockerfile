@@ -26,8 +26,8 @@ RUN wget https://wordpress.org/latest.tar.gz
 RUN tar -xzvf latest.tar.gz 
 RUN mv /var/www/wordpress /var/www/html
 RUN chown -R nginx:nginx /var/www/html
-RUN chmod +x start.sh
 COPY start.sh /start.sh
+RUN chmod +x start.sh
 EXPOSE 9000
 EXPOSE 80
 
