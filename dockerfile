@@ -18,11 +18,14 @@ RUN sed -e 's/127.0.0.1:9000/127.0.0.1:9000/' \
         -i /etc/opt/remi/php72/php-fpm.d/www.conf
 RUN yum update -y    
 RUN yum install nginx iptables mariadb -y \
-                && yum install htop nano net-tools -y				
+                && yum install htop nano net-tools wget tar -y				
 COPY test3.com.conf /etc/nginx/conf.d/test3.com.conf
 COPY nginx.conf /etc/nginx/
 RUN mkdir -p /var/www   
-COPY html/ /var/www/html
+WORKDIR /var/www
+RUN wget https://wordpress.org/latest.tar.gz
+RUN tar -xzvf latest.tar.gz 
+RUN mv /var/www/wordpress /var/www/html
 RUN chown -R nginx:nginx /var/www/html
 EXPOSE 9000
 EXPOSE 80
