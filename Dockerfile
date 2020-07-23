@@ -7,7 +7,7 @@ RUN yum install -y yum-utils \
         && yum install -y epel-release \
         && yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm 
 RUN yum --enablerepo=remi install -y gd-last-devel
-RUN yum-config-manager --enable remi-php72 \
+RUN yum-config-manager --enable remi-php72
 RUN yum install -y php72 php72-php-fpm php72-php-gd php72-php-json php72-php-mbstring php72-php-mysqlnd php72-php-xml php72-php-xmlrpc php72-php-opcache
           
 RUN sed -e '/allowed_clients/d' \
